@@ -20,7 +20,7 @@ public class Thing {
         this.tile = tile;
     }
 
-    Thing(Color color, char glyph, World world) {
+    public Thing(Color color, char glyph, World world) {
         this.color = color;
         this.glyph = glyph;
         this.world = world;
@@ -38,4 +38,8 @@ public class Thing {
         return this.glyph;
     }
 
+    public void moveTo(Thing bros,int initX,int initY,int x,int y){
+        this.world.put(bros,initX,initY);
+        this.world.put(this,x,y);
+    }
 }
